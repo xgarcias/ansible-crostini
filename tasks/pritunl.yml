@@ -1,0 +1,19 @@
+- name: Pritunl gpg key
+  ansible.builtin.apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 7568D9BB55FF9E5287D586017AE645C0CF8E292A
+
+
+- name: Pritunl apt repo
+  ansible.builtin.apt_repository:
+    repo: deb https://repo.pritunl.com/stable/apt bullseye main
+    state: present
+
+
+- name: Install Pritunl
+  apt:
+    pkg:
+      - dirmngr
+      - pritunl-client-electron
+    state: latest
+    update_cache: true

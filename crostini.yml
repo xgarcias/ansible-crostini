@@ -6,3 +6,4 @@
    - include: tasks/packages.yml
    - include: tasks/vscode.yml
    - include: tasks/docker.yml
+   - include: tasks/pritunl.yml

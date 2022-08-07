@@ -5,5 +5,6 @@
       - opensc
       - git
       - tmux 
+      - netcat
     state: latest
     update_cache: true
