@@ -3,6 +3,16 @@
     name: tinyproxy-bin
     state: present
 
+- name: Creates tinyproxy config dir
+  file:
+    path: /etc/tinyproxy/
+    state: directory
+
+- name: Creates tinyproxy run dir
+  file:
+    path: /run/tinyproxy/
+    state: directory
+
 - name: tinyproxy config
   copy:
     src: files/tinyproxy.conf
