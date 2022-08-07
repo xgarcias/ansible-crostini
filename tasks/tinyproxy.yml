@@ -5,7 +5,7 @@
 
 - name: Creates tinyproxy config dir
   file:
-    path: /etc/tinyproxy/
+    path: /home/{{ username }}/cfg/tinyproxy/
     state: directory
 
 - name: Creates tinyproxy run dir
@@ -16,4 +16,4 @@
 - name: tinyproxy config
   copy:
     src: files/tinyproxy.conf
-    dest: /etc/tinyproxy/tinyproxy.conf
+    dest: /home/{{ username }}/cfg/tinyproxy/tinyproxy.conf

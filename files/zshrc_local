@@ -12,7 +12,7 @@ OPENSC_LIB="/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so"
 
 alias load_key="ssh-add -s ${OPENSC_LIB}"
 alias unload_key="ssh-add -e ${OPENSC_LIB}"
-alias proxy="sudo tinyproxy -d /etc/tinyproxy/tinyproxy.conf"
+alias proxy="sudo tinyproxy -d '{$HOME}/cfg/tinyproxy/tinyproxy.conf"
 
 PS1='%F{green}%n@%m%f %F{blue}%1~%f %F{magenta}%#%f '
 
