@@ -6,5 +6,6 @@
       - git
       - tmux 
       - netcat
+      - keepassxc
     state: latest
     update_cache: true
