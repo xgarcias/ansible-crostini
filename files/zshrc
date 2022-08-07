@@ -1,0 +1,2 @@
+# Load a local configuration of zsh
+[ -f $HOME/.zshrc_local ] && source $HOME/.zshrc_local

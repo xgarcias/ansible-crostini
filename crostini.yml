@@ -2,6 +2,7 @@
   become: true
 
   tasks:
+   - include: tasks/shell.yml
    - include: tasks/packages.yml
    - include: tasks/vscode.yml
    - include: tasks/docker.yml

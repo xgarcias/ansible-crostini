@@ -1,0 +1,30 @@
+- name: Install zsh
+  apt:
+    name: zsh
+    state: present
+
+- name: Change shell to zsh
+  user:
+    name: "{{ username }}"
+    shell: /usr/bin/zsh
+
+- name: Setup zshrc
+  copy:
+    src: files/zshrc
+    dest: /home/{{ username }}/.zshrc
+    owner: "{{ username }}"
+    group: "{{ username }}"
+
+- name: Setup base zshrc_local file
+  copy:
+    src: files/zshrc_local
+    dest: /home/{{ username }}/.zshrc_local
+    owner: "{{ username }}"
+    group: "{{ username }}"
+
+- name: Setup vim
+  copy:
+    src: files/vimrc
+    dest: /home/{{ username }}/.vimrc
+    owner: "{{ username }}"
+    group: "{{ username }}"

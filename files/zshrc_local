@@ -2,6 +2,22 @@
 [ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"
 
 # Start tmux if it's not already running
-  if [ -z "$TMUX" ] && [ -e "$HOME/.tmux.conf" ]; then
+  if [ -z "$TMUX" ]; then
     tmux new-session -A -t main
   fi
+
+set -o vi
+
+OPENSC_LIB="/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so"
+
+alias load_key="ssh-add -s ${OPENSC_LIB}"
+alias unload_key="ssh-add -e ${OPENSC_LIB}"
+
+PS1='%F{green}%n@%m%f %F{blue}%1~%f %F{magenta}%#%f '
+
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory
+
+bindkey -e

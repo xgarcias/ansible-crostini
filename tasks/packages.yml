@@ -4,5 +4,6 @@
       - jq
       - opensc
       - git
+      - tmux 
     state: latest
     update_cache: true
