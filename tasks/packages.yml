@@ -1,18 +1,8 @@
-- name: Install golang
+- name: Misc packages
   apt:
-    name: "{{ packages }}"
-  vars:
-    packages:
-    - golang
-
-- name: Install libnotify
-  apt:
-    name: "{{ packages }}"
-  vars:
-    packages:
-    - libnotify-bin
-
-- name: Install zeal
-  apt:
-    name: zeal
-    state: present
+    pkg:
+      - jq
+      - opensc
+      - git
+    state: latest
+    update_cache: true

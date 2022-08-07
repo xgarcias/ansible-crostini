@@ -2,6 +2,6 @@
   become: true
 
   tasks:
-   - include_vars:
-       dir: vars
+   - include: tasks/packages.yml
+   - include: tasks/vscode.yml
    - include: tasks/docker.yml

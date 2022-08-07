@@ -13,7 +13,7 @@
     repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
     state: present
 
-- name: Install Visual Studio Code - Insiders
+- name: Install Visual Studio Code
   apt:
-    name: code-insiders
+    name: code
     state: present
