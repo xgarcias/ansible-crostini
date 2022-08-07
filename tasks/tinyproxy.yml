@@ -1,0 +1,9 @@
+- name: Install tinyproxy
+  apt:
+    name: tinyproxy-bin
+    state: present
+
+- name: tinyproxy config
+  copy:
+    src: files/tinyproxy.conf
+    dest: /etc/tinyproxy/tinyproxy.conf
